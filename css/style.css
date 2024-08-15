@@ -59,6 +59,9 @@ main {
   /* height: max-content; */
   /* grid-row: 2; */
 }
+.card-desc {
+  padding: 2rem;
+}
 .countries {
   display: grid;
   min-height: 100%;
