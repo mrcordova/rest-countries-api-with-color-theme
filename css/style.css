@@ -48,7 +48,7 @@ main {
   height: 100%;
 
   grid-template-rows: max-content;
-  /* grid-row: 2; */
+
   background-color: var(--Very-Light-Gray-Light-Mode-Background);
 }
 
@@ -60,11 +60,31 @@ main {
   /* grid-row: 2; */
 }
 .countries {
-  /* grid-row: 3; */
+  display: grid;
+  min-height: 100%;
+  gap: 2rem;
+  align-content: center;
+  justify-items: center;
+  /* grid-template-columns: repeat(auto-fit, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+
+  grid-template-rows: max-content;
+  /* grid-template: repeat(auto-fit, 1fr) / repeat(4, 1fr); */
+  /* grid-auto-flow: column dense; */
+
+  background-color: var(--Very-Light-Gray-Light-Mode-Background);
 }
 .country-card {
   display: flex;
   flex-direction: column;
+  border-radius: 0.5rem;
+  /* inline-size: 15rem; */
+  max-inline-size: 20rem;
+  background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  & img {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
 }
 .dark-mode-btn {
   display: flex;
