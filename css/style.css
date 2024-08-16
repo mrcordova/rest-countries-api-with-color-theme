@@ -86,6 +86,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 3rem;
   /* position: sticky; */
   /* top: 6rem; */
   /* height: max-content; */
@@ -142,6 +143,7 @@ main {
   padding-block: 1rem 0.8rem;
   padding-inline: 1.5rem 0rem;
   gap: 1.7rem;
+  max-inline-size: 30rem;
   /* margin-inline: 1rem; */
   background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
   box-shadow: 0px 0px 15px 0px
@@ -158,9 +160,9 @@ main {
 
   & input {
     all: unset;
-    flex-grow: 1;
+    /* width: 100%; */
+    /* flex-grow: 1; */
     font-size: 0.75rem;
     width: 100%;
-    max-inline-size: 30rem;
   }
 }
