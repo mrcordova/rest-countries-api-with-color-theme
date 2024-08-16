@@ -2,7 +2,9 @@ const dataReponse = await fetch(
   "https://restcountries.com/v3.1/all?fields=name,region,capital,population,flags"
 );
 const countries = document.querySelector(".countries");
-let selectCountries = document.querySelector("#country-select");
+let selectCountries = document.querySelector(".select-items");
+
+// console.log(selectCountries);
 // const dataReponse = await fetch("https://restcountries.com/v3.1/all");
 const data = await dataReponse.json();
 const regionSet = new Set();
@@ -45,15 +47,51 @@ for (const countryInfo of data) {
   if (!regionSet.has(countryInfo.region)) {
     selectCountries.insertAdjacentHTML(
       "beforeend",
-      `<option value="${countryInfo.region}">${countryInfo.region}</option>`
+      `<div data-value="${countryInfo.region}">${countryInfo.region}</div>`
     );
     regionSet.add(countryInfo.region);
   }
 }
+
+console.log(selectCountries);
 let sorted = Array.from(selectCountries.children).sort((a, b) =>
-  a.value.localeCompare(b.value)
+  a.dataset.value.localeCompare(b.dataset.value)
 );
 
+// Get all custom select elements
+let customSelects = document.querySelectorAll(".custom-select");
+
+// Attach click event listeners to each custom select
+customSelects.forEach(function (select) {
+  let selectSelected = select.querySelector(".select-selected");
+  let selectItems = select.querySelector(".select-items");
+  let options = selectItems.querySelectorAll("div");
+
+  // Toggle the dropdown visibility when the select box is clicked
+  selectSelected.addEventListener("click", function () {
+    if (selectItems.style.display === "block") {
+      selectItems.style.display = "none";
+    } else {
+      selectItems.style.display = "block";
+    }
+  });
+
+  // Set the selected option and hide the dropdown when an option is clicked
+  options.forEach(function (option) {
+    option.addEventListener("click", function () {
+      console.log(selectSelected);
+      selectSelected.firstElementChild.textContent = option.textContent;
+      selectItems.style.display = "none";
+    });
+  });
+
+  // Close the dropdown if the user clicks outside of it
+  window.addEventListener("click", function (e) {
+    if (!select.contains(e.target)) {
+      selectItems.style.display = "none";
+    }
+  });
+});
 selectCountries.replaceChildren(...sorted);
 sorted[0].selected = true;
 // for (const opt of sorted) {

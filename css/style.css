@@ -74,7 +74,7 @@ main {
   flex-direction: column;
   height: 100%;
 
-  margin-inline: 1rem;
+  padding-inline: 1rem;
   /* position: absolute; */
 
   /* grid-template-rows: max-content; */
@@ -86,7 +86,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 3rem;
+  gap: 2.7rem;
   /* position: sticky; */
   /* top: 6rem; */
   /* height: max-content; */
@@ -165,4 +165,55 @@ main {
     font-size: 0.75rem;
     width: 100%;
   }
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+
+.select-selected {
+  background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  color: var(--Very-Dark-Blue-Light-Mode-Text);
+
+  display: flex;
+  font-size: 0.75rem;
+  gap: 3.8rem;
+  border-radius: 0.5rem;
+  padding-inline: 0.95rem;
+  padding-block: 1rem;
+  cursor: pointer;
+
+  & svg {
+    width: 0.8rem;
+
+    & path {
+      stroke-width: 4rem;
+    }
+  }
+}
+
+/* Style the dropdown items */
+.select-items {
+  position: absolute;
+  display: none;
+  background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 1;
+  width: 100%;
+  padding-block: 1rem;
+}
+
+/* Style the dropdown items */
+.select-items div {
+  /* padding: 10px; */
+  padding-inline: 1rem;
+  padding-block: 0.3rem;
+  cursor: pointer;
+}
+
+/* Style the dropdown items on hover */
+.select-items div:hover {
+  background-color: var(--Very-Light-Gray-Light-Mode-Background);
 }
