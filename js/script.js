@@ -7,6 +7,8 @@ let selectCountries = document.querySelector(".select-items");
 // console.log(selectCountries);
 // const dataReponse = await fetch("https://restcountries.com/v3.1/all");
 const data = await dataReponse.json();
+let countryFilterChoice = "";
+let originalCountries;
 const regionSet = new Set();
 function countryDetails(e) {
   console.log(e.currentTarget);
@@ -19,7 +21,9 @@ for (const countryInfo of data) {
   // console.log(countryInfo);
   countries.insertAdjacentHTML(
     "beforeend",
-    ` <div class="country-card">
+    ` <div data-region="${countryInfo.region}" data-name="${
+      countryInfo.name.common
+    }" class="country-card">
           <img class="flag-img" src="${countryInfo.flags.svg}" alt="flag_${
       countryInfo.name.common
     }" />
@@ -52,11 +56,14 @@ for (const countryInfo of data) {
     regionSet.add(countryInfo.region);
   }
 }
+originalCountries = countries.children;
 
-console.log(selectCountries);
+// console.log(selectCountries);
 let sorted = Array.from(selectCountries.children).sort((a, b) =>
   a.dataset.value.localeCompare(b.dataset.value)
 );
+selectCountries.replaceChildren(...sorted);
+sorted[0].selected = true;
 
 // Get all custom select elements
 let customSelects = document.querySelectorAll(".custom-select");
@@ -79,7 +86,20 @@ customSelects.forEach(function (select) {
   // Set the selected option and hide the dropdown when an option is clicked
   options.forEach(function (option) {
     option.addEventListener("click", function () {
-      console.log(selectSelected);
+      Array.from(originalCountries).map((val) => {
+        if (
+          val.dataset.region.toLocaleLowerCase() !==
+          option.textContent.toLocaleLowerCase()
+        ) {
+          val.style.display = "none";
+        } else {
+          val.style.display = "";
+        }
+      });
+
+      // countries.replaceChildren(...filteredCountries);
+      console.log(originalCountries);
+      countryFilterChoice = option.textContent;
       selectSelected.firstElementChild.textContent = option.textContent;
       selectItems.style.display = "none";
     });
@@ -92,8 +112,7 @@ customSelects.forEach(function (select) {
     }
   });
 });
-selectCountries.replaceChildren(...sorted);
-sorted[0].selected = true;
+
 // for (const opt of sorted) {
 //   selectCountries.appendChild(opt);
 // }

@@ -184,6 +184,8 @@ main {
   padding-block: 1rem;
   cursor: pointer;
 
+  box-shadow: 0px 12px 15px 0px
+    hsl(from var(--Dark-Blue-Dark-Mode-Elements) h s l / 0.1);
   & svg {
     width: 0.8rem;
 
@@ -198,11 +200,12 @@ main {
   position: absolute;
   display: none;
   background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   border-radius: 4px;
   z-index: 1;
   width: 100%;
   padding-block: 1rem;
+  margin-block-start: 0.3rem;
 }
 
 /* Style the dropdown items */
@@ -210,6 +213,7 @@ main {
   /* padding: 10px; */
   padding-inline: 1rem;
   padding-block: 0.3rem;
+  /* margin-block-start: 3rem; */
   cursor: pointer;
 }
 
