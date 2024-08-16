@@ -38,6 +38,7 @@ body {
   gap: 1.3rem;
 }
 header {
+  z-index: 1;
   display: flex;
   height: max-content;
   justify-content: space-between;
@@ -170,6 +171,7 @@ main {
 .custom-select {
   position: relative;
   display: inline-block;
+  z-index: 0;
 }
 
 .select-selected {

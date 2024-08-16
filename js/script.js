@@ -3,8 +3,8 @@ const dataReponse = await fetch(
 );
 const countries = document.querySelector(".countries");
 let selectCountries = document.querySelector(".select-items");
-
-// console.log(selectCountries);
+let inputSearch = document.querySelector("#search");
+// console.log(inputSearch);
 // const dataReponse = await fetch("https://restcountries.com/v3.1/all");
 const data = await dataReponse.json();
 let countryFilterChoice = "";
@@ -58,13 +58,43 @@ for (const countryInfo of data) {
 }
 originalCountries = countries.children;
 
-// console.log(selectCountries);
 let sorted = Array.from(selectCountries.children).sort((a, b) =>
   a.dataset.value.localeCompare(b.dataset.value)
 );
 selectCountries.replaceChildren(...sorted);
 sorted[0].selected = true;
 
+inputSearch.addEventListener("input", (e) => {
+  // console.log(e.currentTarget.value);
+  const currentStr = e.currentTarget.value.toLocaleLowerCase();
+  // console.log(countryFilterChoice);
+  Array.from(originalCountries).map((val) => {
+    const countryName = val.dataset.name.toLocaleLowerCase();
+    const region = val.dataset.region.toLocaleLowerCase();
+    // console.log(region);
+    if (
+      countryName.startsWith(currentStr) &&
+      (region == countryFilterChoice || countryFilterChoice == "")
+    ) {
+      val.style.display = "";
+    } else {
+      val.style.display = "none";
+    }
+    // if (
+    //   (val.dataset.region.toLocaleLowerCase() !==
+    //     option.textContent.toLocaleLowerCase() ||
+    //     countryFilterChoice == "") &&
+    //   (val.dataset.name.toLocaleLowerCase().startsWith(e.currentTarget.value) ||
+    //     e.currentTarget.value == "")
+    // ) {
+    //   val.style.display = "flex";
+    // } else if (
+    //   !val.dataset.name.toLocaleLowerCase().startsWith(e.currentTarget.value)
+    // ) {
+    //   val.style.display = "none";
+    // }
+  });
+});
 // Get all custom select elements
 let customSelects = document.querySelectorAll(".custom-select");
 
@@ -86,20 +116,24 @@ customSelects.forEach(function (select) {
   // Set the selected option and hide the dropdown when an option is clicked
   options.forEach(function (option) {
     option.addEventListener("click", function () {
+      countryFilterChoice = option.textContent.toLocaleLowerCase();
       Array.from(originalCountries).map((val) => {
         if (
-          val.dataset.region.toLocaleLowerCase() !==
-          option.textContent.toLocaleLowerCase()
+          val.dataset.region.toLocaleLowerCase() ==
+            option.textContent.toLocaleLowerCase() &&
+          val.dataset.name
+            .toLocaleLowerCase()
+            .startsWith(inputSearch.value.toLocaleLowerCase())
         ) {
-          val.style.display = "none";
-        } else {
           val.style.display = "";
+        } else {
+          val.style.display = "none";
         }
       });
 
       // countries.replaceChildren(...filteredCountries);
-      console.log(originalCountries);
-      countryFilterChoice = option.textContent;
+      // console.log(originalCountries);
+      // countryFilterChoice = option.textContent;
       selectSelected.firstElementChild.textContent = option.textContent;
       selectItems.style.display = "none";
     });
@@ -112,10 +146,3 @@ customSelects.forEach(function (select) {
     }
   });
 });
-
-// for (const opt of sorted) {
-//   selectCountries.appendChild(opt);
-// }
-// sorted[0].selected = true;
-
-// console.log(data);
