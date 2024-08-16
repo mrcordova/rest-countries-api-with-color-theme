@@ -34,7 +34,8 @@ body {
   min-height: 100vh;
   min-height: 100svh;
   grid-template-rows: max-content;
-  /* position: absolute; */
+
+  gap: 1.3rem;
 }
 header {
   display: flex;
@@ -44,13 +45,13 @@ header {
   position: sticky;
   top: 0;
   padding-inline: 0.6rem;
-  padding-block: 2rem;
+  padding-block: 2rem 1.7rem;
   /* padding: 3rem; */
   box-shadow: 0px 0px 15px 0px
     hsl(from var(--Dark-Blue-Dark-Mode-Elements) h s l / 0.5);
 
   & h1 {
-    font-size: 0.85rem;
+    font-size: 0.87rem;
   }
 
   & button {
@@ -72,9 +73,11 @@ main {
   display: flex;
   flex-direction: column;
   height: 100%;
+
+  margin-inline: 1rem;
   /* position: absolute; */
 
-  grid-template-rows: max-content;
+  /* grid-template-rows: max-content; */
 
   background-color: var(--Very-Light-Gray-Light-Mode-Background);
 }
@@ -110,7 +113,7 @@ main {
   display: flex;
   flex-direction: column;
   border-radius: 0.5rem;
-  /* inline-size: 15rem; */
+  inline-size: 16.5rem;
   max-inline-size: 20rem;
   box-shadow: 0px 12px 15px 0px
     hsl(from var(--Dark-Blue-Dark-Mode-Elements) h s l / 0.5);
@@ -125,17 +128,38 @@ main {
   height: max-content;
 }
 
+.flag-img {
+  /* aspect-ratio: 1; */
+  object-fit: cover;
+  height: 10rem;
+  /* height: 100%; */
+}
+
 .search-container {
   display: flex;
   width: 100%;
-  /* flex-direction: column; */
-  /* height: max-content; */
+  border-radius: 0.2rem;
+  padding-block: 1rem 0.8rem;
+  padding-inline: 1.5rem 0rem;
+  gap: 1.7rem;
+  /* margin-inline: 1rem; */
+  background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  box-shadow: 0px 0px 15px 0px
+    hsl(from var(--Dark-Blue-Dark-Mode-Elements) h s l / 0.5);
   align-items: center;
   & > svg {
-    width: 2rem;
+    width: 1.3rem;
+
+    & > path {
+      stroke: var(--Dark-Gray-Light-Mode-Input);
+      stroke-width: 3rem;
+    }
   }
 
   & input {
+    all: unset;
+    flex-grow: 1;
+    font-size: 0.75rem;
     width: 100%;
     max-inline-size: 30rem;
   }

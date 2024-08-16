@@ -18,7 +18,7 @@ for (const countryInfo of data) {
   countries.insertAdjacentHTML(
     "beforeend",
     ` <div class="country-card">
-          <img src="${countryInfo.flags.svg}" alt="flag_${
+          <img class="flag-img" src="${countryInfo.flags.svg}" alt="flag_${
       countryInfo.name.common
     }" />
           <div class="card-desc">
