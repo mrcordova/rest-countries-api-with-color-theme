@@ -33,7 +33,7 @@ let countryFilterChoice = "";
 let originalCountries;
 const regionSet = new Set();
 async function countryDetails(e) {
-  // console.log(e.currentTarget);
+  console.log(e.currentTarget);
   const countryName = e.currentTarget.dataset.name;
 }
 
