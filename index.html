@@ -67,7 +67,7 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="48"
-                d="M112 184l144 144 144-144" />
+                d="M112 184l144 144 144-144" 
             </svg>
           </div>
           <div class="select-items"></div>
@@ -93,49 +93,73 @@
         </button>
 
         <div class="country-detail-section">
-          <img src="" alt="flag" />
+          <img data-country-detai-flag src="" alt="flag" />
 
-          <div>
-            <h1>Belgium</h1>
-            <p>
-              Native Name:
-              <span>Belgie</span>
-            </p>
-            <p>
-              Population:
-              <span>11,319,511</span>
-            </p>
-            <p>
-              Region:
-              <span>Europe</span>
-            </p>
-            <p>
-              Sub Region:
-              <span>Western Europe</span>
-            </p>
-            <p>
-              Capital:
-              <span>Brussels</span>
-            </p>
-            <p>
-              Top Level Domain:
-              <span>.be</span>
-            </p>
-            <p>
-              Currencies:
-              <span>Euro</span>
-            </p>
-            <p>
-              Languages:
-              <span>Dutch, French, German</span>
-            </p>
-          </div>
-          <div>
-            <p>Border Countries:</p>
+          <div class="fields-container">
+            <h1 class="nunito-sans-800">Belgium</h1>
+            <div class="fields">
+              <div>
+                <p class="nunito-sans-600">
+                  Native Name:
+                  <span data-country-detail-native-name class="nunito-sans-300">
+                    Belgie
+                  </span>
+                </p>
+                <p class="nunito-sans-600">
+                  Population:
+                  <span data-country-detail-population class="nunito-sans-300">
+                    11,319,511
+                  </span>
+                </p>
+                <p class="nunito-sans-600">
+                  Region:
+                  <span data-country-detail-region class="nunito-sans-300">
+                    Europe
+                  </span>
+                </p>
+                <p class="nunito-sans-600">
+                  Sub Region:
+                  <span
+                    data-country-detail-subregion=""
+                    class="nunito-sans-300">
+                    Western Europe
+                  </span>
+                </p>
+                <p class="nunito-sans-600">
+                  Capital:
+                  <span data-country-detail-capital="" class="nunito-sans-300">
+                    Brussels
+                  </span>
+                </p>
+              </div>
+              <div>
+                <p class="nunito-sans-600">
+                  Top Level Domain:
+                  <span data-country-detail-tld="" class="nunito-sans-300">
+                    .be
+                  </span>
+                </p>
+                <p class="nunito-sans-600">
+                  Currencies:
+                  <span data-country-detai-currencies class="nunito-sans-300">
+                    Euro
+                  </span>
+                </p>
+                <p class="nunito-sans-600">
+                  Languages:
+                  <span data-country-detail-lang="" class="nunito-sans-300">
+                    Dutch, French, German
+                  </span>
+                </p>
+              </div>
+            </div>
             <div>
-              <button>France</button>
-              <button>Germany</button>
-              <button>Netherlands</button>
+              <p class="nunito-sans-600">Border Countries:</p>
+              <div data-country-detail-borders="" class="nunito-sans-300">
+                <button>France</button>
+                <button>Germany</button>
+                <button>Netherlands</button>
+              </div>
             </div>
           </div>
         </div>

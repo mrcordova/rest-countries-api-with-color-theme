@@ -5,7 +5,7 @@ const dataReponse = await fetch(
 const countryDetailReponse = await fetch(
   "https://restcountries.com/v3.1/name/Belgium?fields=name,population,subregion,region,capital,tld,currencies,languages,borders,flags"
 );
-
+const countryDetail = await countryDetailReponse.json();
 // const borderResponse = await fetch(
 //   "https://restcountries.com/v3.1/alpha?codes=FRA,DEU,LUX"
 // );
@@ -19,6 +19,9 @@ const countryDetailReponse = await fetch(
 //     "NLD"
 // ]
 // console.log(await countryDetailReponse.json());
+const countryDetailImg = document.querySelector("[data-country-detai-flag]");
+countryDetailImg.src = countryDetail[0].flags.png;
+countryDetailImg.alt = countryDetail[0].flags.alt;
 
 const countries = document.querySelector(".countries");
 let selectCountries = document.querySelector(".select-items");
@@ -29,11 +32,11 @@ const data = await dataReponse.json();
 let countryFilterChoice = "";
 let originalCountries;
 const regionSet = new Set();
-function countryDetails(e) {
+async function countryDetails(e) {
   // console.log(e.currentTarget);
+  const countryName = e.currentTarget.dataset.name;
 }
 
-// console.log(data);
 function numberWithCommas(x) {
   x = String(x).replace(/,/g, "");
   return parseFloat(x).toLocaleString();
