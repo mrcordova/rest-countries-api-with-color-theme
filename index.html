@@ -28,8 +28,8 @@
       </button>
     </header>
     <main>
-      <!-- <div class="select-holder"> -->
-      <!-- <div class="search-container">
+      <div class="select-holder">
+        <div class="search-container">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="ionicon"
@@ -61,113 +61,115 @@
               xmlns="http://www.w3.org/2000/svg"
               class="ionicon"
               viewBox="0 0 512 512">
+              <path fill="none" stroke="currentColor" stroke-linecap="round"
+              stroke-linejoin="round" stroke-width="48" d="M112 184l144 144
+              144-144">
+            </svg>
+          </div>
+          <div class="select-items"></div>
+        </div>
+      </div>
+      <div class="countries"></div>
+      <template>
+        <!-- 320.016 w 231.891 h -->
+        <div class="country-detail">
+          <button class="back-btn nunito-sans-600">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="ionicon"
+              viewBox="0 0 512 512">
               <path
                 fill="none"
                 stroke="currentColor"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="48"
-                d="M112 184l144 144 144-144" 
+                d="M244 400L100 256l144-144M120 256h292" />
             </svg>
-          </div>
-          <div class="select-items"></div>
-        </div>
-      </div>
-      <div class="countries"></div> -->
-      <!-- <template> -->
-      <!-- 320.016 w 231.891 h -->
-      <div class="country-detail">
-        <button class="back-btn nunito-sans-600">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="ionicon"
-            viewBox="0 0 512 512">
-            <path
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="48"
-              d="M244 400L100 256l144-144M120 256h292" />
-          </svg>
-          Back
-        </button>
+            Back
+          </button>
 
-        <div class="country-detail-section">
-          <img data-country-detai-flag src="" alt="flag" />
+          <div class="country-detail-section">
+            <img data-country-detai-flag src="" alt="flag" />
 
-          <div class="fields-container">
-            <h1 class="nunito-sans-800">Belgium</h1>
-            <div class="fields">
-              <div>
-                <p class="nunito-sans-600">
-                  Native Name:
-                  <span data-country-detail-native-name class="nunito-sans-300">
-                    Belgie
-                  </span>
-                </p>
-                <p class="nunito-sans-600">
-                  Population:
-                  <span data-country-detail-population class="nunito-sans-300">
-                    11,319,511
-                  </span>
-                </p>
-                <p class="nunito-sans-600">
-                  Region:
-                  <span data-country-detail-region class="nunito-sans-300">
-                    Europe
-                  </span>
-                </p>
-                <p class="nunito-sans-600">
-                  Sub Region:
-                  <span
-                    data-country-detail-subregion=""
-                    class="nunito-sans-300">
-                    Western Europe
-                  </span>
-                </p>
-                <p class="nunito-sans-600">
-                  Capital:
-                  <span data-country-detail-capital="" class="nunito-sans-300">
-                    Brussels
-                  </span>
-                </p>
+            <div class="fields-container">
+              <h1 class="nunito-sans-800">Belgium</h1>
+              <div class="fields">
+                <div>
+                  <p class="nunito-sans-600">
+                    Native Name:
+                    <span
+                      data-country-detail-native-name
+                      class="nunito-sans-300">
+                      Belgie
+                    </span>
+                  </p>
+                  <p class="nunito-sans-600">
+                    Population:
+                    <span
+                      data-country-detail-population
+                      class="nunito-sans-300">
+                      11,319,511
+                    </span>
+                  </p>
+                  <p class="nunito-sans-600">
+                    Region:
+                    <span data-country-detail-region class="nunito-sans-300">
+                      Europe
+                    </span>
+                  </p>
+                  <p class="nunito-sans-600">
+                    Sub Region:
+                    <span
+                      data-country-detail-subregion=""
+                      class="nunito-sans-300">
+                      Western Europe
+                    </span>
+                  </p>
+                  <p class="nunito-sans-600">
+                    Capital:
+                    <span
+                      data-country-detail-capital=""
+                      class="nunito-sans-300">
+                      Brussels
+                    </span>
+                  </p>
+                </div>
+                <div>
+                  <p class="nunito-sans-600">
+                    Top Level Domain:
+                    <span data-country-detail-tld="" class="nunito-sans-300">
+                      .be
+                    </span>
+                  </p>
+                  <p class="nunito-sans-600">
+                    Currencies:
+                    <span data-country-detai-currencies class="nunito-sans-300">
+                      Euro
+                    </span>
+                  </p>
+                  <p class="nunito-sans-600">
+                    Languages:
+                    <span data-country-detail-lang="" class="nunito-sans-300">
+                      Dutch, French, German
+                    </span>
+                  </p>
+                </div>
               </div>
-              <div>
-                <p class="nunito-sans-600">
-                  Top Level Domain:
-                  <span data-country-detail-tld="" class="nunito-sans-300">
-                    .be
-                  </span>
-                </p>
-                <p class="nunito-sans-600">
-                  Currencies:
-                  <span data-country-detai-currencies class="nunito-sans-300">
-                    Euro
-                  </span>
-                </p>
-                <p class="nunito-sans-600">
-                  Languages:
-                  <span data-country-detail-lang="" class="nunito-sans-300">
-                    Dutch, French, German
-                  </span>
-                </p>
-              </div>
-            </div>
-            <div class="borders-container">
-              <p class="nunito-sans-600">Border Countries:</p>
-              <div
-                data-country-detail-borders=""
-                class="nunito-sans-300 detail-borders">
-                <button>France</button>
-                <button>Germany</button>
-                <button>Netherlands</button>
+              <div class="borders-container">
+                <p class="nunito-sans-600">Border Countries:</p>
+                <div
+                  data-country-detail-borders=""
+                  class="nunito-sans-300 detail-borders">
+                  <button>France</button>
+                  <button>Germany</button>
+                  <button>Netherlands</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- </template> -->
+      </template>
     </main>
   </body>
 </html>

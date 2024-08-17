@@ -19,9 +19,9 @@ const countryDetail = await countryDetailReponse.json();
 //     "NLD"
 // ]
 // console.log(await countryDetailReponse.json());
-const countryDetailImg = document.querySelector("[data-country-detai-flag]");
-countryDetailImg.src = countryDetail[0].flags.png;
-countryDetailImg.alt = countryDetail[0].flags.alt;
+// const countryDetailImg = document.querySelector("[data-country-detai-flag]");
+// countryDetailImg.src = countryDetail[0].flags.png;
+// countryDetailImg.alt = countryDetail[0].flags.alt;
 
 const countries = document.querySelector(".countries");
 let selectCountries = document.querySelector(".select-items");

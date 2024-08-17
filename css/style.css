@@ -108,6 +108,10 @@ main {
   & svg {
     width: 1.2rem;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .borders-container {
@@ -153,7 +157,7 @@ main {
 }
 
 .country-detail {
-  padding-block-start: 1.1rem;
+  padding-block: 1.1rem;
   padding-inline: 0.3rem 0.2rem;
   display: flex;
   flex-direction: column;
@@ -169,7 +173,7 @@ main {
   & img {
     flex: 1;
     /* min-width: 20rem; */
-    height: 14.49rem;
+    /* max-height: 14.49rem; */
     aspect-ratio: 1.38;
     /* object-fit: contain; */
     /* margin-inline: auto; */
