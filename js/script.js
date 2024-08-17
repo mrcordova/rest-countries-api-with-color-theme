@@ -1,6 +1,25 @@
 const dataReponse = await fetch(
   "https://restcountries.com/v3.1/all?fields=name,region,capital,population,flags"
 );
+
+const countryDetailReponse = await fetch(
+  "https://restcountries.com/v3.1/name/Belgium?fields=name,population,subregion,region,capital,tld,currencies,languages,borders,flags"
+);
+
+// const borderResponse = await fetch(
+//   "https://restcountries.com/v3.1/alpha?codes=FRA,DEU,LUX"
+// );
+
+// console.log(await borderResponse.json());
+
+// \[
+//     "FRA",
+//     "DEU",
+//     "LUX",
+//     "NLD"
+// ]
+// console.log(await countryDetailReponse.json());
+
 const countries = document.querySelector(".countries");
 let selectCountries = document.querySelector(".select-items");
 let inputSearch = document.querySelector("#search");
@@ -11,8 +30,10 @@ let countryFilterChoice = "";
 let originalCountries;
 const regionSet = new Set();
 function countryDetails(e) {
-  console.log(e.currentTarget);
+  // console.log(e.currentTarget);
 }
+
+// console.log(data);
 function numberWithCommas(x) {
   x = String(x).replace(/,/g, "");
   return parseFloat(x).toLocaleString();
@@ -24,8 +45,10 @@ for (const countryInfo of data) {
     ` <div data-region="${countryInfo.region}" data-name="${
       countryInfo.name.common
     }" class="country-card">
-          <img class="flag-img" src="${countryInfo.flags.svg}" alt="flag_${
-      countryInfo.name.common
+          <img class="flag-img" src="${countryInfo.flags.svg}" alt="${
+      countryInfo.flags.alt == ""
+        ? `flag_${countryInfo.name.common}`
+        : countryInfo.flags.alt
     }" />
           <div class="card-desc">
           <h2 class="nunito-sans-800">${countryInfo.name.common}</h2>

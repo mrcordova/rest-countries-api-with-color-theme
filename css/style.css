@@ -95,6 +95,19 @@ main {
   /* height: max-content; */
   /* grid-row: 2; */
 }
+.back-btn {
+  display: flex;
+  background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  box-shadow: 0px 0px 15px 0px
+    hsl(from var(--Dark-Blue-Dark-Mode-Elements) h s l / 0.5);
+  gap: 0.5rem;
+  padding-inline: 1.5rem;
+  padding-block: 0.2rem;
+  border-radius: 0.2rem;
+  & svg {
+    width: 1.2rem;
+  }
+}
 .card-desc {
   padding: 2rem;
 }
@@ -126,6 +139,10 @@ main {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
   }
+
+  & :hover {
+    cursor: pointer;
+  }
 }
 .dark-mode-btn {
   display: flex;
@@ -150,7 +167,8 @@ main {
   /* margin-inline: 1rem; */
   background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
   box-shadow: 0px 0px 15px 0px
-    hsl(from var(--Dark-Blue-Dark-Mode-Elements) h s l / 0.5);
+    hsl(from var(--Dark-Blue-Dark-Mode-Elements) h s l / 0.1);
+
   align-items: center;
   & > svg {
     width: 1.3rem;
