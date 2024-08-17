@@ -113,6 +113,7 @@ main {
 .borders-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 .card-desc {
   padding: 2rem;
@@ -178,6 +179,28 @@ main {
 .dark-mode-btn {
   display: flex;
   height: max-content;
+}
+
+.detail-borders {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+  font-size: 0.75rem;
+  & button {
+    border-radius: 0.2rem;
+    padding-inline: 1.5rem;
+    /* width: 6.5rem; */
+    padding-block: 0.3rem;
+    background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+    box-shadow: 0px 0px 15px 0px
+      hsl(from var(--Dark-Blue-Dark-Mode-Elements) h s l / 0.1);
+    /* background-color: red; */
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .fields {
