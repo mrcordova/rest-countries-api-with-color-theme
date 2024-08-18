@@ -2,35 +2,13 @@ const dataReponse = await fetch(
   "https://restcountries.com/v3.1/all?fields=name,region,capital,population,flags"
 );
 
-// const countryDetailReponse = await fetch(
-//   "https://restcountries.com/v3.1/name/Belgium?fields=name,population,subregion,region,capital,tld,currencies,languages,borders,flags"
-// );
-// const countryDetail = await countryDetailReponse.json();
-// const borderResponse = await fetch(
-//   "https://restcountries.com/v3.1/alpha?codes=FRA,DEU,LUX"
-// );
-
-// console.log(await borderResponse.json());
-
-// \[
-//     "FRA",
-//     "DEU",
-//     "LUX",
-//     "NLD"
-// ]
-// console.log(await countryDetailReponse.json());
-// const countryDetailImg = document.querySelector("[data-country-detai-flag]");
-// countryDetailImg.src = countryDetail[0].flags.png;
-// countryDetailImg.alt = countryDetail[0].flags.alt;
-
 const countries = document.querySelector(".countries");
 const filterHolder = document.querySelector(".select-holder");
 let selectCountries = document.querySelector(".select-items");
 let inputSearch = document.querySelector("#search");
 const mainEle = document.querySelector("main");
 const themeBtn = document.querySelector(".dark-mode-btn");
-// console.log(inputSearch);
-// const dataReponse = await fetch("https://restcountries.com/v3.1/all");
+
 const data = await dataReponse.json();
 let countryFilterChoice = "";
 let originalCountries;
@@ -43,7 +21,6 @@ function numberWithCommas(x) {
   return parseFloat(x).toLocaleString();
 }
 async function countryDetails(e) {
-  // console.log(e.currentTarget);
   const countryName = e.currentTarget.dataset.name;
   const countryDetailReponse = await fetch(
     `https://restcountries.com/v3.1/name/${countryName}?fields=name,population,subregion,region,capital,tld,currencies,languages,borders,flags`
@@ -57,8 +34,7 @@ async function countryDetails(e) {
     console.log("back btn click");
     countries.style.display = "";
     filterHolder.style.display = "";
-    // console.log(e.currentTarget.parentElement);
-    // e.currentTarget.parentElement.style.display = "none";
+
     e.currentTarget.parentElement.remove();
   });
   const img = firstClone.querySelector("[data-country-detai-flag]");
@@ -94,7 +70,7 @@ async function countryDetails(e) {
   const currencies = firstClone.querySelector(
     "[data-country-detai-currencies]"
   );
-  // let currenciesName = [];
+
   const currenciesName = Object.values(countryDetail.currencies).reduce(
     (arr, { name, symbol }) => {
       arr.push(name);
@@ -108,7 +84,6 @@ async function countryDetails(e) {
   languages.textContent = Object.values(countryDetail.languages).join(", ");
 
   const borders = firstClone.querySelector("[ data-country-detail-borders]");
-  // console.log(countryDetail.borders.length);
 
   if (countryDetail.borders.length !== 0) {
     const borderResponse = await fetch(
@@ -118,14 +93,11 @@ async function countryDetails(e) {
     );
 
     const bordersArr = await borderResponse.json();
-    // console.log(bordersArr);
     for (const border of bordersArr) {
-      // console.log(border);
       const borderBtn = document.createElement("button");
       borderBtn.insertAdjacentText("beforeEnd", border.name.common);
       borderBtn.setAttribute("data-name", border.name.common);
       borderBtn.addEventListener("click", (e) => {
-        // console.log(e.currentTarget.textContent);
         document.querySelector(".country-detail").remove();
         countryDetails(e);
       });
@@ -136,12 +108,9 @@ async function countryDetails(e) {
   mainEle.appendChild(firstClone);
   countries.style.display = "none";
   filterHolder.style.display = "none";
-  // console.log(currenciesName);
-  // console.log(firstClone);
 }
 
 for (const countryInfo of data) {
-  // console.log(countryInfo);
   countries.insertAdjacentHTML(
     "beforeend",
     ` <div data-region="${countryInfo.region}" data-name="${
