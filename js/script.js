@@ -84,7 +84,7 @@ async function countryDetails(e) {
   capital.textContent = countryDetail.capital;
 
   const tld = firstClone.querySelector("[data-country-detail-tld]");
-  tld.textContent = `${countryDetail.tld.join(",")}`;
+  tld.textContent = `${countryDetail.tld.join(", ")}`;
 
   const currencies = firstClone.querySelector(
     "[data-country-detai-currencies]"
@@ -97,10 +97,10 @@ async function countryDetails(e) {
     },
     []
   );
-  currencies.textContent = `${currenciesName.join(",")}`;
+  currencies.textContent = `${currenciesName.join(", ")}`;
 
   const languages = firstClone.querySelector("[data-country-detail-lang]");
-  languages.textContent = Object.values(countryDetail.languages).join(",");
+  languages.textContent = Object.values(countryDetail.languages).join(", ");
 
   const borders = firstClone.querySelector("[ data-country-detail-borders]");
   // console.log(countryDetail.borders.length);
