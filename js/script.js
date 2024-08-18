@@ -2,10 +2,10 @@ const dataReponse = await fetch(
   "https://restcountries.com/v3.1/all?fields=name,region,capital,population,flags"
 );
 
-const countryDetailReponse = await fetch(
-  "https://restcountries.com/v3.1/name/Belgium?fields=name,population,subregion,region,capital,tld,currencies,languages,borders,flags"
-);
-const countryDetail = await countryDetailReponse.json();
+// const countryDetailReponse = await fetch(
+//   "https://restcountries.com/v3.1/name/Belgium?fields=name,population,subregion,region,capital,tld,currencies,languages,borders,flags"
+// );
+// const countryDetail = await countryDetailReponse.json();
 // const borderResponse = await fetch(
 //   "https://restcountries.com/v3.1/alpha?codes=FRA,DEU,LUX"
 // );
@@ -26,15 +26,87 @@ const countryDetail = await countryDetailReponse.json();
 const countries = document.querySelector(".countries");
 let selectCountries = document.querySelector(".select-items");
 let inputSearch = document.querySelector("#search");
+const mainEle = document.querySelector("main");
 // console.log(inputSearch);
 // const dataReponse = await fetch("https://restcountries.com/v3.1/all");
 const data = await dataReponse.json();
 let countryFilterChoice = "";
 let originalCountries;
 const regionSet = new Set();
+
+const template = document.getElementById("template");
+
 async function countryDetails(e) {
-  console.log(e.currentTarget);
+  // console.log(e.currentTarget);
   const countryName = e.currentTarget.dataset.name;
+  const countryDetailReponse = await fetch(
+    `https://restcountries.com/v3.1/name/${countryName}?fields=name,population,subregion,region,capital,tld,currencies,languages,borders,flags`
+  );
+  const countryDetail = (await countryDetailReponse.json())[0];
+
+  const firstClone = template.content.cloneNode(true);
+  firstClone.children[0].addEventListener("click", (e) => {
+    console.log("back btn click");
+  });
+  const img = firstClone.querySelector("[data-country-detai-flag]");
+  img.src = countryDetail.flags.svg;
+  img.alt = countryDetail.flags.alt;
+
+  const countryTitle = firstClone.querySelector("[data-country-detail-name]");
+  countryTitle.textContent = countryName;
+
+  const nativeName = firstClone.querySelector(
+    "[data-country-detail-native-name]"
+  );
+
+  nativeName.textContent = Object.values(
+    countryDetail.name.nativeName
+  )[0].common;
+
+  const pop = firstClone.querySelector("[data-country-detail-population]");
+  pop.textContent = numberWithCommas(countryDetail.population);
+
+  const region = firstClone.querySelector("[data-country-detail-region]");
+  region.textContent = countryDetail.region;
+
+  const subregion = firstClone.querySelector("[data-country-detail-subregion]");
+  subregion.textContent = countryDetail.subregion;
+
+  const capital = firstClone.querySelector("[data-country-detail-capital]");
+  capital.textContent = countryDetail.capital;
+
+  const tld = firstClone.querySelector("[data-country-detail-tld]");
+  tld.textContent = `${countryDetail.tld.join(",")}`;
+
+  const currencies = firstClone.querySelector(
+    "[data-country-detai-currencies]"
+  );
+  // let currenciesName = [];
+  const currenciesName = Object.values(countryDetail.currencies).reduce(
+    (arr, { name, symbol }) => {
+      arr.push(name);
+      return arr;
+    },
+    []
+  );
+  currencies.textContent = `${currenciesName.join(",")}`;
+
+  const languages = firstClone.querySelector("[data-country-detail-lang]");
+  languages.textContent = Object.values(countryDetail.languages).join(",");
+
+  const borders = firstClone.querySelector("[ data-country-detail-borders]");
+  // console.log(countryDetail.borders);
+  for (const border of countryDetail.borders) {
+    // console.log(border);
+    const borderBtn = document.createElement("button");
+    borderBtn.insertAdjacentText("beforeEnd", border);
+    borderBtn.addEventListener("click", (e) => {
+      console.log(e.currentTarget.textContent);
+    });
+    borders.appendChild(borderBtn);
+  }
+  // console.log(currenciesName);
+  console.log(firstClone);
 }
 
 function numberWithCommas(x) {
