@@ -35,6 +35,7 @@ body {
   min-height: 100svh;
   grid-template-rows: max-content;
   background-color: var(--Very-Light-Gray-Light-Mode-Background);
+  background-color: var(--Very-Dark-Blue-Dark-Mode-Background);
   gap: 1.3rem;
 }
 header {
@@ -43,6 +44,10 @@ header {
   height: max-content;
   justify-content: space-between;
   background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  background-color: var(--Dark-Blue-Dark-Mode-Elements);
+
+  color: var(--Very-Dark-Blue-Light-Mode-Text);
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
   position: sticky;
   top: 0;
   padding-inline: 0.6rem;
@@ -62,6 +67,12 @@ header {
 
     & svg {
       inline-size: 0.9rem;
+
+      & path {
+        stroke: var(--Dark-Blue-Dark-Mode-Elements);
+        stroke: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+        fill: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+      }
     }
     & span {
       font-size: 0.75rem;
@@ -80,7 +91,8 @@ main {
 
   /* grid-template-rows: max-content; */
 
-  background-color: var(--Very-Light-Gray-Light-Mode-Background);
+  /* background-color: var(--Very-Light-Gray-Light-Mode-Background);
+  background-color: var(--Very-Dark-Blue-Dark-Mode-Background); */
 }
 
 .select-holder {
@@ -97,7 +109,12 @@ main {
 }
 .back-btn {
   display: flex;
+
   background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  background-color: var(--Dark-Blue-Dark-Mode-Elements);
+  color: var(--Very-Dark-Blue-Light-Mode-Text);
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+
   box-shadow: 0px 0px 15px 0px
     hsl(from var(--Dark-Blue-Dark-Mode-Elements) h s l / 0.5);
   gap: 0.5rem;
@@ -122,6 +139,8 @@ main {
 .card-desc {
   display: flex;
   flex-direction: column;
+  color: var(--Very-Dark-Blue-Light-Mode-Text);
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
   padding-block: 1.5rem 3rem;
   padding-inline: 1.5rem;
 
@@ -147,7 +166,8 @@ main {
   /* grid-template: repeat(auto-fit, 1fr) / repeat(4, 1fr); */
   /* grid-auto-flow: column dense; */
 
-  background-color: var(--Very-Light-Gray-Light-Mode-Background);
+  /* background-color: var(--Very-Light-Gray-Light-Mode-Background);
+  background-color: var(--Very-Dark-Blue-Dark-Mode-Background); */
 }
 .country-card {
   display: flex;
@@ -158,6 +178,8 @@ main {
   box-shadow: 0px 12px 15px 0px
     hsl(from var(--Dark-Blue-Dark-Mode-Elements) h s l / 0.5);
   background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+
+  background-color: var(--Dark-Blue-Dark-Mode-Elements);
   & img {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
@@ -212,7 +234,13 @@ main {
     padding-inline: 1.5rem;
     /* width: 6.5rem; */
     padding-block: 0.3rem;
+
     background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+    background-color: var(--Dark-Blue-Dark-Mode-Elements);
+
+    color: var(--Very-Dark-Blue-Light-Mode-Text);
+    color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+
     box-shadow: 0px 0px 15px 0px
       hsl(from var(--Dark-Blue-Dark-Mode-Elements) h s l / 0.1);
     /* background-color: red; */
@@ -242,6 +270,8 @@ main {
   flex-direction: column;
   gap: 1.4rem;
 
+  color: var(--Very-Dark-Blue-Light-Mode-Text);
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
   & h1 {
     font-size: 1.3rem;
   }
@@ -263,6 +293,10 @@ main {
   max-inline-size: 30rem;
   /* margin-inline: 1rem; */
   background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  background-color: var(--Dark-Blue-Dark-Mode-Elements);
+
+  color: var(--Very-Dark-Blue-Light-Mode-Text);
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
   box-shadow: 0px 0px 15px 0px
     hsl(from var(--Dark-Blue-Dark-Mode-Elements) h s l / 0.1);
 
@@ -272,16 +306,20 @@ main {
 
     & > path {
       stroke: var(--Dark-Gray-Light-Mode-Input);
+      stroke: var(--White-Dark-Mode-Text-Light-Mode-Elements);
       stroke-width: 3rem;
     }
   }
 
   & input {
     all: unset;
-    /* width: 100%; */
-    /* flex-grow: 1; */
+
     font-size: 0.75rem;
     width: 100%;
+
+    &::placeholder {
+      color: inherit;
+    }
   }
 }
 
@@ -293,7 +331,9 @@ main {
 
 .select-selected {
   background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  background-color: var(--Dark-Blue-Dark-Mode-Elements);
   color: var(--Very-Dark-Blue-Light-Mode-Text);
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
 
   display: flex;
   font-size: 0.75rem;
@@ -319,6 +359,10 @@ main {
   position: absolute;
   display: none;
   background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  background-color: var(--Dark-Blue-Dark-Mode-Elements);
+
+  color: var(--Very-Dark-Blue-Light-Mode-Text);
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   border-radius: 4px;
   z-index: 1;
