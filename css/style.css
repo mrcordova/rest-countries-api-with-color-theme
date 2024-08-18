@@ -6,8 +6,18 @@
   --Dark-Gray-Light-Mode-Input: hsl(0, 0%, 52%);
   --Very-Light-Gray-Light-Mode-Background: hsl(0, 0%, 98%);
   --White-Dark-Mode-Text-Light-Mode-Elements: hsl(0, 0%, 100%);
-}
 
+  --Main-Background: hsl(0, 0%, 98%);
+  --Mode-Elements: hsl(0, 0%, 100%);
+  --Mode-Text: hsl(200, 15%, 8%);
+  --Mode-Input: hsl(0, 0%, 52%);
+}
+:root.dark-mode {
+  --Mode-Elements: hsl(209, 23%, 22%);
+  --Main-Background: hsl(207, 26%, 17%);
+  --Mode-Text: hsl(0, 0%, 100%);
+  --Mode-Input: hsl(0, 0%, 100%);
+}
 .nunito-sans-300 {
   font-family: "Nunito Sans", sans-serif;
   font-optical-sizing: auto;
@@ -34,8 +44,10 @@ body {
   min-height: 100vh;
   min-height: 100svh;
   grid-template-rows: max-content;
-  background-color: var(--Very-Light-Gray-Light-Mode-Background);
-  background-color: var(--Very-Dark-Blue-Dark-Mode-Background);
+  /* background-color: var(--Very-Light-Gray-Light-Mode-Background);
+  background-color: var(--Very-Dark-Blue-Dark-Mode-Background); */
+
+  background-color: var(--Main-Background);
   gap: 1.3rem;
 }
 header {
@@ -43,18 +55,21 @@ header {
   display: flex;
   height: max-content;
   justify-content: space-between;
-  background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
-  background-color: var(--Dark-Blue-Dark-Mode-Elements);
+  /* background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  background-color: var(--Dark-Blue-Dark-Mode-Elements); */
 
-  color: var(--Very-Dark-Blue-Light-Mode-Text);
-  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  background-color: var(--Mode-Elements);
+
+  /* color: var(--Very-Dark-Blue-Light-Mode-Text);
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
+  color: var(--Mode-Text);
   position: sticky;
   top: 0;
   padding-inline: 0.6rem;
   padding-block: 2rem 1.7rem;
   /* padding: 3rem; */
   box-shadow: 0px 0px 15px 0px
-    hsl(from var(--Dark-Blue-Dark-Mode-Elements) h s l / 0.5);
+    hsl(from var(--Very-Dark-Blue-Light-Mode-Text) h s l / 0.5);
 
   & h1 {
     font-size: 0.87rem;
@@ -69,8 +84,9 @@ header {
       inline-size: 0.9rem;
 
       & path {
-        stroke: var(--Dark-Blue-Dark-Mode-Elements);
-        stroke: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+        /* stroke: var(--Dark-Blue-Dark-Mode-Elements);
+        stroke: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
+        stroke: var(--Mode-Text);
         fill: var(--White-Dark-Mode-Text-Light-Mode-Elements);
       }
     }
@@ -110,13 +126,17 @@ main {
 .back-btn {
   display: flex;
 
-  background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
-  background-color: var(--Dark-Blue-Dark-Mode-Elements);
-  color: var(--Very-Dark-Blue-Light-Mode-Text);
-  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  /* background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  background-color: var(--Dark-Blue-Dark-Mode-Elements); */
+  background-color: var(--Mode-Elements);
+
+  /* color: var(--Very-Dark-Blue-Light-Mode-Text);
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
+
+  color: var(--Mode-Text);
 
   box-shadow: 0px 0px 15px 0px
-    hsl(from var(--Dark-Blue-Dark-Mode-Elements) h s l / 0.5);
+    hsl(from var(--Very-Dark-Blue-Light-Mode-Text) h s l / 0.5);
   gap: 0.5rem;
   padding-inline: 1.3rem;
   padding-block: 0.3rem;
@@ -139,8 +159,10 @@ main {
 .card-desc {
   display: flex;
   flex-direction: column;
-  color: var(--Very-Dark-Blue-Light-Mode-Text);
-  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  /* color: var(--Very-Dark-Blue-Light-Mode-Text);
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
+
+  color: var(--Mode-Text);
   padding-block: 1.5rem 3rem;
   padding-inline: 1.5rem;
 
@@ -176,10 +198,12 @@ main {
   inline-size: 16.5rem;
   max-inline-size: 20rem;
   box-shadow: 0px 12px 15px 0px
-    hsl(from var(--Dark-Blue-Dark-Mode-Elements) h s l / 0.5);
-  background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+    hsl(from var(--Very-Dark-Blue-Light-Mode-Text) h s l / 0.5);
+  /* background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
 
-  background-color: var(--Dark-Blue-Dark-Mode-Elements);
+  background-color: var(--Dark-Blue-Dark-Mode-Elements); */
+
+  background-color: var(--Mode-Elements);
   & img {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
@@ -221,6 +245,10 @@ main {
 .dark-mode-btn {
   display: flex;
   height: max-content;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .detail-borders {
@@ -235,14 +263,18 @@ main {
     /* width: 6.5rem; */
     padding-block: 0.3rem;
 
-    background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
-    background-color: var(--Dark-Blue-Dark-Mode-Elements);
+    /* background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+    background-color: var(--Dark-Blue-Dark-Mode-Elements); */
 
-    color: var(--Very-Dark-Blue-Light-Mode-Text);
-    color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+    background-color: var(--Mode-Elements);
+
+    /* color: var(--Very-Dark-Blue-Light-Mode-Text);
+    color: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
+
+    color: var(--Mode-Text);
 
     box-shadow: 0px 0px 15px 0px
-      hsl(from var(--Dark-Blue-Dark-Mode-Elements) h s l / 0.1);
+      hsl(from var(--Very-Dark-Blue-Light-Mode-Text) h s l / 0.1);
     /* background-color: red; */
 
     &:hover {
@@ -270,8 +302,10 @@ main {
   flex-direction: column;
   gap: 1.4rem;
 
-  color: var(--Very-Dark-Blue-Light-Mode-Text);
-  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  /* color: var(--Very-Dark-Blue-Light-Mode-Text);
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
+
+  color: var(--Mode-Text);
   & h1 {
     font-size: 1.3rem;
   }
@@ -292,21 +326,27 @@ main {
   gap: 1.7rem;
   max-inline-size: 30rem;
   /* margin-inline: 1rem; */
-  background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
-  background-color: var(--Dark-Blue-Dark-Mode-Elements);
+  /* background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  background-color: var(--Dark-Blue-Dark-Mode-Elements); */
 
-  color: var(--Very-Dark-Blue-Light-Mode-Text);
-  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  background-color: var(--Mode-Elements);
+
+  /* color: var(--Very-Dark-Blue-Light-Mode-Text);
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
+
+  color: var(--Mode-Text);
   box-shadow: 0px 0px 15px 0px
-    hsl(from var(--Dark-Blue-Dark-Mode-Elements) h s l / 0.1);
+    hsl(from var(--Very-Dark-Blue-Light-Mode-Text) h s l / 0.1);
 
   align-items: center;
   & > svg {
     width: 1.3rem;
 
     & > path {
-      stroke: var(--Dark-Gray-Light-Mode-Input);
-      stroke: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+      /* stroke: var(--Dark-Gray-Light-Mode-Input);
+      stroke: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
+
+      stroke: var(--Mode-Input);
       stroke-width: 3rem;
     }
   }
@@ -330,10 +370,13 @@ main {
 }
 
 .select-selected {
-  background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
-  background-color: var(--Dark-Blue-Dark-Mode-Elements);
-  color: var(--Very-Dark-Blue-Light-Mode-Text);
-  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  /* background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  background-color: var(--Dark-Blue-Dark-Mode-Elements); */
+
+  background-color: var(--Mode-Elements);
+  /* color: var(--Very-Dark-Blue-Light-Mode-Text);
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
+  color: var(--Mode-Text);
 
   display: flex;
   font-size: 0.75rem;
@@ -344,7 +387,7 @@ main {
   cursor: pointer;
 
   box-shadow: 0px 12px 15px 0px
-    hsl(from var(--Dark-Blue-Dark-Mode-Elements) h s l / 0.1);
+    hsl(from var(--Very-Dark-Blue-Light-Mode-Text) h s l / 0.1);
   & svg {
     width: 0.8rem;
 
@@ -358,11 +401,15 @@ main {
 .select-items {
   position: absolute;
   display: none;
-  background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
-  background-color: var(--Dark-Blue-Dark-Mode-Elements);
+  /* background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  background-color: var(--Dark-Blue-Dark-Mode-Elements); */
 
-  color: var(--Very-Dark-Blue-Light-Mode-Text);
-  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  background-color: var(--Mode-Elements);
+
+  /* color: var(--Very-Dark-Blue-Light-Mode-Text);
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
+
+  color: var(--Mode-Text);
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   border-radius: 4px;
   z-index: 1;

@@ -28,6 +28,7 @@ const filterHolder = document.querySelector(".select-holder");
 let selectCountries = document.querySelector(".select-items");
 let inputSearch = document.querySelector("#search");
 const mainEle = document.querySelector("main");
+const themeBtn = document.querySelector(".dark-mode-btn");
 // console.log(inputSearch);
 // const dataReponse = await fetch("https://restcountries.com/v3.1/all");
 const data = await dataReponse.json();
@@ -37,6 +38,10 @@ const regionSet = new Set();
 
 const template = document.getElementById("template");
 
+function numberWithCommas(x) {
+  x = String(x).replace(/,/g, "");
+  return parseFloat(x).toLocaleString();
+}
 async function countryDetails(e) {
   // console.log(e.currentTarget);
   const countryName = e.currentTarget.dataset.name;
@@ -135,10 +140,6 @@ async function countryDetails(e) {
   // console.log(firstClone);
 }
 
-function numberWithCommas(x) {
-  x = String(x).replace(/,/g, "");
-  return parseFloat(x).toLocaleString();
-}
 for (const countryInfo of data) {
   // console.log(countryInfo);
   countries.insertAdjacentHTML(
@@ -188,6 +189,9 @@ let sorted = Array.from(selectCountries.children).sort((a, b) =>
 selectCountries.replaceChildren(...sorted);
 sorted[0].selected = true;
 
+themeBtn.addEventListener("click", (e) => {
+  document.documentElement.classList.toggle("dark-mode");
+});
 inputSearch.addEventListener("input", (e) => {
   // console.log(e.currentTarget.value);
   const currentStr = e.currentTarget.value.toLocaleLowerCase();
