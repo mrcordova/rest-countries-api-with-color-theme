@@ -221,7 +221,7 @@ main {
   /* Desktop */
   padding-block: 3.7rem;
   /* padding-inline: 0.3rem 0.2rem; */
-  gap: 4.3rem;
+  gap: 4.9rem;
 }
 .country-detail-section {
   display: flex;
@@ -229,11 +229,18 @@ main {
   align-items: center;
   align-self: center;
   flex-wrap: wrap;
-  gap: 2.6rem;
+  /* Mobile */
+  /* gap: 2.6rem; */
+  /* Desktop */
+  gap: 7.8rem;
 
   & img {
-    min-width: 20rem;
-    max-height: 14.49rem;
+    /* Mobile */
+    /* min-width: 20rem; */
+    /* max-height: 14.49rem; */
+    /* DEsktop */
+    width: 35rem;
+    height: 25rem;
   }
 }
 .dark-mode-btn {
@@ -272,24 +279,42 @@ main {
 .fields {
   display: flex;
   flex-wrap: wrap;
-  gap: 2.65rem;
-  font-size: 0.87rem;
+  /* Mobile */
+  /* gap: 2.65rem; */
+  /* font-size: 0.87rem; */
+  /* Desktop */
+  gap: 7rem;
+  font-size: 1rem;
 
   & div {
     display: flex;
     flex-direction: column;
-    gap: 0.7rem;
+    /* Mobile */
+    /* gap: 0.7rem; */
+    /* Desktop */
+    gap: 0.5rem;
+
+    /* & p {
+      display: flex;
+      flex-wrap: wrap;
+    } */
   }
 }
 
 .fields-container {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  /* Mobile */
+  /* gap: 1.4rem; */
+  /* Desktop */
+  gap: 1.75rem;
 
   color: var(--Mode-Text);
   & h1 {
-    font-size: 1.3rem;
+    /* Mobile */
+    /* font-size: 1.3rem; */
+    /* Desktop */
+    font-size: 2rem;
   }
 }
 .flag-img {
