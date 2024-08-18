@@ -44,8 +44,6 @@ body {
   min-height: 100vh;
   min-height: 100svh;
   grid-template-rows: max-content;
-  /* background-color: var(--Very-Light-Gray-Light-Mode-Background);
-  background-color: var(--Very-Dark-Blue-Dark-Mode-Background); */
 
   background-color: var(--Main-Background);
   gap: 1.3rem;
@@ -55,19 +53,14 @@ header {
   display: flex;
   height: max-content;
   justify-content: space-between;
-  /* background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
-  background-color: var(--Dark-Blue-Dark-Mode-Elements); */
 
   background-color: var(--Mode-Elements);
 
-  /* color: var(--Very-Dark-Blue-Light-Mode-Text);
-  color: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
   color: var(--Mode-Text);
   position: sticky;
   top: 0;
   padding-inline: 0.6rem;
   padding-block: 2rem 1.7rem;
-  /* padding: 3rem; */
   box-shadow: 0px 0px 15px 0px
     hsl(from var(--Very-Dark-Blue-Light-Mode-Text) h s l / 0.5);
 
@@ -84,8 +77,6 @@ header {
       inline-size: 0.9rem;
 
       & path {
-        /* stroke: var(--Dark-Blue-Dark-Mode-Elements);
-        stroke: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
         stroke: var(--Mode-Text);
         fill: var(--White-Dark-Mode-Text-Light-Mode-Elements);
       }
@@ -103,12 +94,6 @@ main {
   height: 100%;
 
   padding-inline: 1rem;
-  /* position: absolute; */
-
-  /* grid-template-rows: max-content; */
-
-  /* background-color: var(--Very-Light-Gray-Light-Mode-Background);
-  background-color: var(--Very-Dark-Blue-Dark-Mode-Background); */
 }
 
 .select-holder {
@@ -118,20 +103,11 @@ main {
   justify-content: space-between;
   align-items: flex-start;
   gap: 2.7rem;
-  /* position: sticky; */
-  /* top: 6rem; */
-  /* height: max-content; */
-  /* grid-row: 2; */
 }
 .back-btn {
   display: flex;
 
-  /* background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
-  background-color: var(--Dark-Blue-Dark-Mode-Elements); */
   background-color: var(--Mode-Elements);
-
-  /* color: var(--Very-Dark-Blue-Light-Mode-Text);
-  color: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
 
   color: var(--Mode-Text);
 
@@ -159,8 +135,6 @@ main {
 .card-desc {
   display: flex;
   flex-direction: column;
-  /* color: var(--Very-Dark-Blue-Light-Mode-Text);
-  color: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
 
   color: var(--Mode-Text);
   padding-block: 1.5rem 3rem;
@@ -181,15 +155,9 @@ main {
   gap: 2rem;
   align-content: center;
   justify-items: center;
-  /* grid-template-columns: repeat(auto-fit, 1fr); */
   grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
 
   grid-template-rows: max-content;
-  /* grid-template: repeat(auto-fit, 1fr) / repeat(4, 1fr); */
-  /* grid-auto-flow: column dense; */
-
-  /* background-color: var(--Very-Light-Gray-Light-Mode-Background);
-  background-color: var(--Very-Dark-Blue-Dark-Mode-Background); */
 }
 .country-card {
   display: flex;
@@ -199,9 +167,6 @@ main {
   max-inline-size: 20rem;
   box-shadow: 0px 12px 15px 0px
     hsl(from var(--Very-Dark-Blue-Light-Mode-Text) h s l / 0.5);
-  /* background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
-
-  background-color: var(--Dark-Blue-Dark-Mode-Elements); */
 
   background-color: var(--Mode-Elements);
   & img {
@@ -228,18 +193,12 @@ main {
   justify-content: center;
   align-items: center;
   align-self: center;
-  /* flex-direction: column; */
   flex-wrap: wrap;
   gap: 2.6rem;
 
   & img {
-    /* flex: 1; */
     min-width: 20rem;
     max-height: 14.49rem;
-    /* aspect-ratio: 1.38; */
-    /* object-fit: contain; */
-    /* margin-inline: auto; */
-    /* justify-self: center; */
   }
 }
 .dark-mode-btn {
@@ -260,22 +219,14 @@ main {
   & button {
     border-radius: 0.2rem;
     padding-inline: 1.5rem;
-    /* width: 6.5rem; */
     padding-block: 0.3rem;
 
-    /* background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
-    background-color: var(--Dark-Blue-Dark-Mode-Elements); */
-
     background-color: var(--Mode-Elements);
-
-    /* color: var(--Very-Dark-Blue-Light-Mode-Text);
-    color: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
 
     color: var(--Mode-Text);
 
     box-shadow: 0px 0px 15px 0px
       hsl(from var(--Very-Dark-Blue-Light-Mode-Text) h s l / 0.1);
-    /* background-color: red; */
 
     &:hover {
       cursor: pointer;
@@ -285,7 +236,6 @@ main {
 
 .fields {
   display: flex;
-  /* flex-direction: column; */
   flex-wrap: wrap;
   gap: 2.65rem;
   font-size: 0.87rem;
@@ -302,19 +252,13 @@ main {
   flex-direction: column;
   gap: 1.4rem;
 
-  /* color: var(--Very-Dark-Blue-Light-Mode-Text);
-  color: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
-
   color: var(--Mode-Text);
   & h1 {
     font-size: 1.3rem;
   }
 }
 .flag-img {
-  /* aspect-ratio: 1; */
-  /* object-fit: cover; */
   height: 10rem;
-  /* height: 100%; */
 }
 
 .search-container {
@@ -325,14 +269,8 @@ main {
   padding-inline: 1.5rem 0rem;
   gap: 1.7rem;
   max-inline-size: 30rem;
-  /* margin-inline: 1rem; */
-  /* background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
-  background-color: var(--Dark-Blue-Dark-Mode-Elements); */
 
   background-color: var(--Mode-Elements);
-
-  /* color: var(--Very-Dark-Blue-Light-Mode-Text);
-  color: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
 
   color: var(--Mode-Text);
   box-shadow: 0px 0px 15px 0px
@@ -343,9 +281,6 @@ main {
     width: 1.3rem;
 
     & > path {
-      /* stroke: var(--Dark-Gray-Light-Mode-Input);
-      stroke: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
-
       stroke: var(--Mode-Input);
       stroke-width: 3rem;
     }
@@ -370,12 +305,8 @@ main {
 }
 
 .select-selected {
-  /* background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
-  background-color: var(--Dark-Blue-Dark-Mode-Elements); */
-
   background-color: var(--Mode-Elements);
-  /* color: var(--Very-Dark-Blue-Light-Mode-Text);
-  color: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
+
   color: var(--Mode-Text);
 
   display: flex;
@@ -401,16 +332,10 @@ main {
 .select-items {
   position: absolute;
   display: none;
-  /* background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
-  background-color: var(--Dark-Blue-Dark-Mode-Elements); */
 
   background-color: var(--Mode-Elements);
 
-  /* color: var(--Very-Dark-Blue-Light-Mode-Text);
-  color: var(--White-Dark-Mode-Text-Light-Mode-Elements); */
-
   color: var(--Mode-Text);
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   border-radius: 4px;
   z-index: 1;
   width: 100%;
@@ -420,10 +345,8 @@ main {
 
 /* Style the dropdown items */
 .select-items div {
-  /* padding: 10px; */
   padding-inline: 1rem;
   padding-block: 0.3rem;
-  /* margin-block-start: 3rem; */
   cursor: pointer;
 }
 
