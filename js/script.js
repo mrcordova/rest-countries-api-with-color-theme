@@ -118,8 +118,11 @@ async function countryDetails(e) {
       // console.log(border);
       const borderBtn = document.createElement("button");
       borderBtn.insertAdjacentText("beforeEnd", border.name.common);
+      borderBtn.setAttribute("data-name", border.name.common);
       borderBtn.addEventListener("click", (e) => {
-        console.log(e.currentTarget.textContent);
+        // console.log(e.currentTarget.textContent);
+        document.querySelector(".country-detail").remove();
+        countryDetails(e);
       });
       borders.appendChild(borderBtn);
     }

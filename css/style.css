@@ -175,18 +175,22 @@ main {
   flex-direction: column;
   align-items: flex-start;
   gap: 4rem;
+  transition: 0.5s ease;
 }
 .country-detail-section {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
   /* flex-direction: column; */
   flex-wrap: wrap;
   gap: 2.6rem;
 
   & img {
-    flex: 1;
-    /* min-width: 20rem; */
-    /* max-height: 14.49rem; */
-    aspect-ratio: 1.38;
+    /* flex: 1; */
+    min-width: 20rem;
+    max-height: 14.49rem;
+    /* aspect-ratio: 1.38; */
     /* object-fit: contain; */
     /* margin-inline: auto; */
     /* justify-self: center; */
