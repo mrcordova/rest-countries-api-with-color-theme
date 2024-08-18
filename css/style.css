@@ -412,7 +412,8 @@ main {
 
 /* Style the dropdown items on hover */
 .select-items div:hover {
-  background-color: var(--Very-Light-Gray-Light-Mode-Background);
+  /* background-color: var(--Very-Light-Gray-Light-Mode-Background); */
+  background-color: var(--Main-Background);
 }
 
 @media (min-width: 30rem) {
