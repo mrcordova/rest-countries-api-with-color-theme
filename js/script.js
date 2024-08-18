@@ -24,6 +24,7 @@ const dataReponse = await fetch(
 // countryDetailImg.alt = countryDetail[0].flags.alt;
 
 const countries = document.querySelector(".countries");
+const filterHolder = document.querySelector(".select-holder");
 let selectCountries = document.querySelector(".select-items");
 let inputSearch = document.querySelector("#search");
 const mainEle = document.querySelector("main");
@@ -45,8 +46,15 @@ async function countryDetails(e) {
   const countryDetail = (await countryDetailReponse.json())[0];
 
   const firstClone = template.content.cloneNode(true);
-  firstClone.children[0].addEventListener("click", (e) => {
+  const backBtn = firstClone.querySelector(".back-btn");
+
+  backBtn.addEventListener("click", (e) => {
     console.log("back btn click");
+    countries.style.display = "";
+    filterHolder.style.display = "";
+    // console.log(e.currentTarget.parentElement);
+    // e.currentTarget.parentElement.style.display = "none";
+    e.currentTarget.parentElement.remove();
   });
   const img = firstClone.querySelector("[data-country-detai-flag]");
   img.src = countryDetail.flags.svg;
@@ -116,8 +124,12 @@ async function countryDetails(e) {
       borders.appendChild(borderBtn);
     }
   }
+
+  mainEle.appendChild(firstClone);
+  countries.style.display = "none";
+  filterHolder.style.display = "none";
   // console.log(currenciesName);
-  console.log(firstClone);
+  // console.log(firstClone);
 }
 
 function numberWithCommas(x) {
