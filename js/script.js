@@ -95,15 +95,26 @@ async function countryDetails(e) {
   languages.textContent = Object.values(countryDetail.languages).join(",");
 
   const borders = firstClone.querySelector("[ data-country-detail-borders]");
-  // console.log(countryDetail.borders);
-  for (const border of countryDetail.borders) {
-    // console.log(border);
-    const borderBtn = document.createElement("button");
-    borderBtn.insertAdjacentText("beforeEnd", border);
-    borderBtn.addEventListener("click", (e) => {
-      console.log(e.currentTarget.textContent);
-    });
-    borders.appendChild(borderBtn);
+  // console.log(countryDetail.borders.length);
+
+  if (countryDetail.borders.length !== 0) {
+    const borderResponse = await fetch(
+      `https://restcountries.com/v3.1/alpha?codes=${countryDetail.borders.join(
+        ","
+      )}`
+    );
+
+    const bordersArr = await borderResponse.json();
+    // console.log(bordersArr);
+    for (const border of bordersArr) {
+      // console.log(border);
+      const borderBtn = document.createElement("button");
+      borderBtn.insertAdjacentText("beforeEnd", border.name.common);
+      borderBtn.addEventListener("click", (e) => {
+        console.log(e.currentTarget.textContent);
+      });
+      borders.appendChild(borderBtn);
+    }
   }
   // console.log(currenciesName);
   console.log(firstClone);
