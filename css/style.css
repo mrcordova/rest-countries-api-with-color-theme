@@ -182,10 +182,10 @@ main {
 .countries {
   display: grid;
   min-height: 100%;
-  gap: 2rem;
+  gap: 4rem;
   align-content: center;
   justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
 
   grid-template-rows: max-content;
 }
