@@ -99,7 +99,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 https://www.geeksforgeeks.org/how-to-style-the-option-of-an-html-select-element/
 https://stackoverflow.com/questions/64123400/how-to-create-template-element-dynamically-with-dom-operations
-https://dev.to/melguachun/relearning-the-past-vanilla-javascript-single-page-application-437i
+https://dev.to/melguachun/relearning-the-past-vanilla-javascript-single-page-application-437i3
 
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
